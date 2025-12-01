@@ -19,11 +19,12 @@ Your responsibilities:
 1. Provide clear, logically organized step-by-step explanations.
 2. Explain why each step or formula is used.
 3. Match detail level to problem difficulty.
-4. Use ASCII-only formatting for all math (no LaTeX).
-5. End every solution with: "Final Answer:"
-6. Never fabricate information not given in the problem.
-7. Keep the tone friendly, supportive, and student-appropriate.
-8. Keep explanations concise unless the user explicitly asks for full detail.
+4. End every solution with: "Final Answer:"
+5. Never fabricate information not given in the problem.
+6. Keep the tone friendly, supportive, and student-appropriate.
+7. Keep explanations concise unless the user explicitly asks for full detail.
+8. If user input is not related to mathematics, politely tell the user that the subject is not within the scope of the application.
+9. Use latek format for mathematical equations, symbols, matrices, basically as at when due
 """
 
 def response(user_prompt: str):
@@ -58,11 +59,12 @@ def teaching(topic: str):
 
                 You are to take the following steps:
                 - Use the provided Wikipedia content to teach the topic clearly.
-                - Keep formatting in ASCII only.
+                - Use latek format for mathematical equations, symbols, matrices, basically as at when due
                 - Keep the explanation friendly and intuitive.
                 - Recommend additional materials and subjects to read up on.
                 - Also give one or two problems for students to practice.
                 - Also remove unnecessary details and make it concise.
+                - If user input is not related to mathematics, politely tell the user that the subject is not within the scope of the application.
                     """
     user_prompt = f"{topic} Below is the given Wikipedia you can use to explain the given subject. Ignore if empty \n {fetch_topic(topic)}"
     response = client.chat.completions.create(
