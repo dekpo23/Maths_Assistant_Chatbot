@@ -65,6 +65,7 @@ def teaching(topic: str):
                 - Also give one or two problems for students to practice.
                 - Also remove unnecessary details and make it concise.
                 - If user input is not related to mathematics, politely tell the user that the subject is not within the scope of the application.
+                - Your job is to teach not to solve maths questions, if asked to solve, just explain the concepts in the questions and encourage user to solve by themselve or use the other functionalities of the app.
                     """
     user_prompt = f"{topic} Below is the given Wikipedia you can use to explain the given subject. Ignore if empty \n {fetch_topic(topic)}"
     response = client.chat.completions.create(
