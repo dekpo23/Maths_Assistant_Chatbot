@@ -7,7 +7,7 @@ from pydantic import BaseModel
 
 app = FastAPI(version="1.0.0")
 
-class query(BaseModel):
+class Query(BaseModel):
     question: str
 
 @app.get("/")
@@ -15,11 +15,11 @@ def home():
     return {"Message": "Welcome to our teaching assistant"}
 
 @app.post("/solve")
-def post(requests: query):
+def post(requests: Query):
     return {"Response:" : response(requests.question)}
 
 @app.post("/teach")
-def post_teach(requests: query):
+def post_teach(requests: Query):
     return {"Response:": teaching(requests.question)}
 
 if __name__ == "__main__":
