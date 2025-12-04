@@ -6,8 +6,8 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
 
-
-origins = ["http://localhost:8080"]
+ 
+origins = ["http://localhost:3000"]
 
 
 app = FastAPI(version="1.0.0")
