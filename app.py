@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 
  
-origins = ["http://localhost:3000", "https://adinya-ai.vercel.app/"]
+origins = ["http://localhost:3000", "https://adinya-ai.vercel.app"]
 
 
 app = FastAPI(version="1.0.0")
